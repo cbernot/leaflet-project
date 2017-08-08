@@ -1,0 +1,42 @@
+---
+title: "Leaflet Map Project"
+author: "cgb"
+date: "August 8, 2017"
+output: html_document
+---
+
+This is a leaflet map of the coastal area of Alabama over to Pensacola Florida.  If you click on each marker, it will display the name of the city and the estimated 2016 population (using the estimates for the U.S. Census Bureau).
+
+```{r,comment=FALSE, echo=FALSE,warning=FALSE}
+library(leaflet)
+
+my_map <- leaflet() %>% 
+        addTiles()
+my_map <- my_map %>% 
+        addMarkers(lat=30.695366, lng=-88.039891, 
+                   popup="Mobile, AL  pop. 192,904
+")%>%
+        addMarkers(lat=30.671469, lng=-87.901883, 
+           popup="Spanish Fort, AL  pop. 8,327
+")%>%
+        addMarkers(lat=30.603526, lng=-87.903605, 
+           popup="Daphne, AL pop. 25,913
+")%>%
+        addMarkers(lat=30.522972, lng=-87.903326, 
+           popup="Fairhope, AL  pop. 19,421
+")%>%
+        addMarkers(lat=30.406587, lng=-87.683597, 
+           popup="Foley, AL  pop. 17,607
+ ")%>%
+        addMarkers(lat=30.246036, lng=-87.700819, 
+           popup="Gulf Shores, AL  pop. 11,689
+ ")%>%
+        addMarkers(lat=30.421309, lng=-87.2169, 
+           popup="Pensacola, FL  pop. 53,779
+")
+        
+
+my_map
+
+```
+
